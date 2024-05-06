@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-2">
+          <!-- Nested Row within Card Body -->
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Add Donor Details</h1>
+                </div>
+                <form class="user" action="#" method="Post" th:action="@{/donor/create}" th:object="${donorFormDTO}">
+                  <input th:field="*{id}" type="hidden">
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input th:field="*{firstName}" type="text" class="form-control form-control-user ma"
+                        id="exampleFirstName" placeholder="First Name" />
+                    </div>
+                    <div class="col-sm-6">
+                      <input th:field="*{lastName}" type="text" class="form-control form-control-user"
+                        id="exampleLastName" placeholder="Last Name" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input th:field="*{email}" type="email" class="form-control form-control-user"
+                      id="exampleInputEmail" placeholder="Email Address" />
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                      <input th:field="*{phoneNumber}" type="text" class="form-control form-control-user"
+                        id="exampleInputEmail" placeholder="Phone Number" pattern="[0-9]{10}"
+                        title="10 digit number only" />
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input th:field="*{packetNumber}" type="text" class="form-control form-control-user"
+                        id="exampleInputEmail" placeholder="Packet Number" pattern="[0-9]{5}"
+                        title="5 Digit Number Only" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input th:field="*{age}" type="number" class="form-control form-control-user"
+                        id="exampleInputEmail" placeholder="Age" max="65" min="18" />
+                    </div>
+                    <div class="col-sm-6">
+                      <select th:field="bloodGroup" class="form-control form-control-user" style="
+                          height: 61.82px;
+                          padding: 0rem;
+                          padding-left: 20px;
+                          padding-right: 20px;
+                        " required>
+                        <option selected>Blood Group</option>
+                        <option value="">A</option>
+                        <option value="">A+</option>
+                        <option value="">A-</option>
+                        <option value="">B</option>
+                        <option value="">B+</option>
+                        <option value="">B-</option>
+                        <option value="">AB</option>
+                        <option value="">AB+</option>
+                        <option value="">AB-</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input th:field="*{adhaarNumber}" type="text" class="form-control form-control-user" id="exampleInputEmail"
+                      placeholder="Adhaar Number" pattern="[0-9]{12}" title="12 digit number" />
+                  </div>
+                  <hr />
+                  <input type="submit" class="btn btn-primary btn-user btn-block" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

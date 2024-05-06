@@ -1,0 +1,14 @@
+ HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        Mono<UserLoginRes> responseMono = webClient.post()
+                .uri("/auth")
+                .body(BodyInserters.fromValue(userLoginReq))
+                .retrieve()
+                .bodyToMono(UserLoginRes.class)
+                .onErrorResume(WebClientResponseException.class, ex -> {
+                    // Handle WebClientResponseException
+                    // Example: Log the error and return a default response
+                    System.err.println("WebClient error: " + ex.getMessage());
+                    return Mono.just(new UserLoginRes()); // Return a default response
+                });
+        return responseMono.block();

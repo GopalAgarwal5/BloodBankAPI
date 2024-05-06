@@ -1,0 +1,42 @@
+{
+  "firstName": "Gopal",
+  "lastName": "krishan",
+  "phoneNumber": 7891397052,
+  "email": "gopal@gmail.com",
+  "manager": 0,
+  "discription": "xyz",
+  "position": "MANAGER",
+  "userRoll": "MANAGER",
+  "rollId": 1,
+  "password": "hello",
+  "address": [
+    {
+      "addressLine": "abc",
+      "city": "bikaner",
+      "state": "rajasthan",
+      "postalCode": 334603,
+      "country": "india"
+    }
+  ]
+}
+,
+{
+  "firstName": "akshit",
+  "lastName": "kumar",
+  "phoneNumber": 7891397052,
+  "packetNumber": 12,
+  "age": 25,
+  "email": "gopal@gmail.com",
+  "bloodGroup": "A+",
+  "adhaarNumber": "30213213211",
+  "date": "28/06/2000",
+  "address": [
+    {
+      "addressLine": "abc",
+      "city": "bikaner",
+      "state": "rajasthan",
+      "postalCode": 334603,
+      "country": "india"
+    }
+  ]
+}
